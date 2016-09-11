@@ -56,7 +56,7 @@ def extract_file_paths(buffer):
 
 def extract_urls(buffer):
     print "[+] Extract urls"
-    r = re.compile(b'([a-zA-Z]{3,5}\:\/\/[\w\/\.-~%&#;]+)')
+    r = re.compile(b'([a-zA-Z]{3,5}\:\/\/[\w\/\.\-\~\%\&\#\;]+)')
     for match in r.finditer(buffer):
         if len(match.group(1)) >= MIN_LEN:
             if match.group(1) not in lUrl:
